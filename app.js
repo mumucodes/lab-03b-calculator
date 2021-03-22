@@ -1,3 +1,5 @@
+import {sum} from "./utils.js";
+
 // get DOM for addition
 const addValue1 = document.getElementById('value1');
 const addValue2 = document.getElementById('value2');
@@ -20,26 +22,56 @@ const divCalculate = document.getElementById("divide-calculate");
 const divResults = document.getElementById("divide-results");
 
 // event listener for button to deliver user results addition 
-addCalculate.addEventListener('click', () => {
-    const sum = addValue1.valueAsNumber + addValue2.valueAsNumber;
-    addResults.textContent = sum;
+
+
+function addClick() {
+
+const sum = sum(addValue1.valueAsNumber, addValue2.valueAsNumber);
+addResults.textContent = sum;
     
     console.log(addResults);
-})
-// event listener for button to deliver user results subtraction
-subCalculate.addEventListener('click', () => {
-    const sumSub = subValue1a.valueAsNumber - subValue2a.valueAsNumber;
-    subResults.textContent = sumSub;
-    
-    console.log(addResults);
-})
-// event listener for button to deliver user results multiplication
-multCalculate.addEventListener('click', () => {
+}
+
+addCalculate.addEventListener('click', addClick());
+
+
+function multClick() {
     const sumMult = multValue1b.valueAsNumber * multValue2b.valueAsNumber;
     multResults.textContent = sumMult;
     
     console.log(addResults);
-})
+}
+
+multCalculate.addEventListener('click', multClick())
+
+
+
+function subClick() {
+    const sumSub = subValue1a.valueAsNumber - subValue2a.valueAsNumber;
+    subResults.textContent = sumSub;
+   
+    console.log(addResults);
+}
+
+subCalculate.addEventListener('click', subClick()) ;
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // event listener for button to deliver user results division
 divCalculate.addEventListener('click', () => {
     const sumDiv = divValue1c.valueAsNumber / divValue2c.valueAsNumber;
